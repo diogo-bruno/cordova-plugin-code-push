@@ -481,7 +481,8 @@ StatusReport* rollbackStatusReport = nil;
             // Fixes WKWebView unable to load start page from CodePush update directory
             NSString* scheme = [self getAppScheme];
             if ([Utilities CDVWebViewEngineAvailable] && ([realStartPageLocation hasPrefix:@"/_app_file_"] == NO) && !([scheme isEqualToString: @"file"] || scheme == nil)) {
-                realStartPageLocation = [@"/_app_file_" stringByAppendingString:realStartPageLocation];
+                //realStartPageLocation = [@"/_app_file_" stringByAppendingString:realStartPageLocation];
+                CPLog([@"/_app_file_" stringByAppendingString:realStartPageLocation]);
             }
             return [NSURL fileURLWithPath:realStartPageLocation];
         }
